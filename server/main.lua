@@ -1,7 +1,7 @@
 ESX                         = nil
 local CopsConnected         = 0
 local alive                 = true
-local PlayerHarvestingWeed  = {}
+local PlayerHarvestingCannabis  = {}
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
@@ -20,21 +20,29 @@ end
 CountCops()
 
 --WEED
-local function HarvestWeed(source)
+local function HarvestCannabis(source)
     if CopsConnected < Config.Cops then
         TriggerClientEvent('esx:showNotification', source, _U('polisi_kurang') .. CopsConnected .. '/' .. Config.Cops)
         return
     end
     SetTimeout(5000, function()
-        if PlayerHarvestingWeed[source] == true then
+        if PlayerHarvestingCannabis[source] == true then
             local xPlayer = ESX.GetPlayerFromId(source)
-            local weed = xPlayer.getInventoryItem('weed')
-            if weed.limit ~= -1 and weed.count >= weed.limit then
+            local cannabis = xPlayer.getInventoryItem('canabis')
+            if cannabis.limit ~= -1 and cannabis.count >= cannabis.limit then
                 TriggerClientEvent('esx:showNotification', source, _U('inventory_penuh'))
                 else
                     xPlayer.addInventoryItem('weed', 1)
-                    HarvestWeed(source)
+                    HarvestCannabis(source)
             end
         end
     end)
 end
+
+
+RegisterServerEvent('mnz_drugs:PickupCannabis')
+AddEventHandler('mnz_drugs:PickupCannabis', function()
+    local _source = source
+    PlayerHarvestingWeed[_source] = true
+    TriggerClientEvent('esx:showNotification', _source, _U('ambil_canabis'))
+    HarvestCannabis(_source)
