@@ -4,6 +4,9 @@ Config.ZoneSize     = {x= 00.0, y= 00.0, z= 00.0}
 Config.MarkColor    = {r= 00.0 g= 00.0 b= 00.0}
 Config.MarkType     = 1
 Config.Locale       = id
+
+Config.GiveBlack = true
+
 Config.Zone = {
     {x= 00.0 y= 00.0 z= 00.0}
 }
@@ -11,10 +14,6 @@ Config.Zone = {
 Config.Location = {
     Ladang = vector3(00.0, 00.0, 00.0),
     Ladang_kedua = vector3(11.1, 11.1, 11.1)
-}
-Config.ObjLocations = {
-    Ladang  = {x = 00.0, y = 00.0, z = 00.0},
-    Ladang_kedua = {x = 11.1, y = 11.1, z = 11.1}
 }
 
 Config.Price = {
