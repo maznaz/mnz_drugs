@@ -1,6 +1,7 @@
-ESX                     = nil
-local CopsConnected     = 0
-local alive             = true
+ESX                         = nil
+local CopsConnected         = 0
+local alive                 = true
+local PlayerHarvestingWeed  = {}
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
