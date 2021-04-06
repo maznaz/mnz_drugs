@@ -49,9 +49,9 @@ Citizen.CreateThread(function()
 						table.remove(weedPlants, nearbyID)
 						spawnedWeeds = spawnedWeeds - 1
 		
-						TriggerServerEvent('esx_drugs:pickedUpCannabis')
+						TriggerServerEvent('mnz_drugs:pickupCannabis')
 					else
-						ESX.ShowNotification(_U('weed_inventoryfull'))
+						ESX.ShowNotification(_U('cannabis_inventoryfull'))
 					end
 
 					isPickingUp = false
