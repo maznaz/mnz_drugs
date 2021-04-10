@@ -15,15 +15,6 @@ Config.CircleZones = {
 	DrugDealer = {coords = vector3(-1172.02, -1571.98, 4.66),
 }
 
-Config.Zone = {
-    {x= 00.0 y= 00.0 z= 00.0}
-}
-
-Config.Location = {
-    Ladang = vector3(00.0, 00.0, 00.0),
-    Ladang_kedua = vector3(11.1, 11.1, 11.1)
-}
-
 Config.Price = {
     weed    = 1000,
     opium   = 1000,
